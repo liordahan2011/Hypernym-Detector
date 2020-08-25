@@ -1,1 +1,5 @@
 # Hypernym-Detector
+The final project in Distributed Systems Programming course taken in Ben-Gurion University of the Negev.<br><br>
+We are using Amazon Cloud Computing, and Hadoop Map-Reduce model for processing and generating big data sets with a parallel, distributed algorithm on an EMR cluster.<br>
+The project consists of three Map-Reduce jobs. Each job receives as input the output of the previous job apart from the first job which receives as input the Biarcs dataset of the syntactic NGRAM resource, released by Google. (http://storage.googleapis.com/books/syntactic-ngrams/index.html)<br><br>
+The NGRAMs are parsed, and a dependency path is built between every two nouns in a graph. Each path has his own unique index in a feature vector that we built for each duo of nouns. The third’s job output is converted to arff file and is given as input to Weka along with a training set (https://www.cs.bgu.ac.il/~dsp202/wiki.files/hypernym.txt). We then run a classifier for 10-fold cross validation on our data and analyze the results.
